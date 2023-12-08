@@ -1,3 +1,41 @@
+# React Task Manager App
+
+This is a simple Task Manager application built using React. It helps users manage their tasks by providing functionalities to add, edit, and remove tasks.
+
+## Components
+
+### 1. Task Form
+
+In this component, users can enter the task title and description. Upon clicking the "Add Task" button, the task is added to the Task List component.
+
+### 2. Task List
+
+Displays a list of tasks added by the user. Clicking on a task name will open the Task Editor component for modifying the task.
+
+### 3. Task Editor
+
+Allows users to modify the selected task. Users can update the task in the Task List by clicking the "Update Task" button or remove the task entirely using the "Remove Task" button.
+
+## How to Use
+
+1. Clone this repository to your local machine.
+2. Install dependencies using `npm install`.
+3. Start the development server with `npm start`.
+4. Access the Task Manager app in your web browser at `http://localhost:3000`.
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js installed on your machine
+
+### Installing
+
+1. Clone this repository:
+   ```bash
+   git clone https://github.com/your-username/react-task-manager.git
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
