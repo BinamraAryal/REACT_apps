@@ -25,6 +25,8 @@ const TaskForm = ({addTask}) => {
   };
 
   return (
+    <div className="task-entry-container">
+            <h1>Task Form</h1>
     <form onSubmit={handleSubmit}> {/*onSubmit handler*/}
       <input
         type="text"
@@ -40,6 +42,7 @@ const TaskForm = ({addTask}) => {
       />
       <button type="submit">Add Task</button>
     </form>
+    </div>
   );
 };
 

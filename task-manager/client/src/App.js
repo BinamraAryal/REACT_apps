@@ -36,21 +36,9 @@ const App=()=>{
 
     return(
         <div className="App">
-            
-            <div className="task-entry-container">
-            <h1>Task Form</h1>
-            <TaskForm addTask={addTask} tasks={tasks} setTasks={setTasks}/>
-            </div>
-
-            <div className="task-list-container">
-            <h1>Task List</h1>
+            <TaskForm addTask={addTask}/>
             <TaskList tasks={tasks} onTaskClick={handleTaskClick}/>
-            </div>
-
-            <div className="task-editor-container">
-                <TaskEditor taskToEdit={selectedTask} updateTask={updateTask} onRemoveTask={removeTask}/>
-            </div>
-
+            <TaskEditor taskToEdit={selectedTask} updateTask={updateTask} onRemoveTask={removeTask}/>
         </div>
     );
 };

@@ -7,6 +7,7 @@ const TaskList = ({ tasks, onTaskClick }) => {
     }
   return (
     <div className="task-list-container">
+      <h1>Task List</h1>
       <table>
         <thead>
           <tr>
