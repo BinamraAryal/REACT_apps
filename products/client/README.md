@@ -1,3 +1,18 @@
+# Frontend
+This section encompasses the React frontend of the E-commerce application, fostering a user-friendly interface and seamless interaction with the application's functionalities.
+
+# Components:
+## - ProductFilters: 
+A pivotal component responsible for enabling users to filter products based on diverse criteria, enhancing user experience by providing tailored search results.
+## - ProductList:
+Displays a comprehensive list of products fetched from the backend, ensuring a visually appealing and organized showcase of available items.
+## - SearchBar:
+Empowers users to swiftly search for specific products, enhancing accessibility and ease of navigation within the application.
+
+# Custom Hooks:
+## - useProductData:
+An intricately crafted custom hook dedicated to efficiently managing and handling product-related data, optimizing data manipulation and state management for enhanced performance.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
