@@ -40,7 +40,7 @@ const TaskForm = ({addTask}) => {
         value={description}
         onChange={(e) => setDescription(e.target.value)}
       />
-      <button type="submit">Add Task</button>
+      <button type="submit" onClick={handleSubmit}>Add Task</button>
     </form>
     </div>
   );
