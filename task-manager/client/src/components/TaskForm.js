@@ -5,7 +5,7 @@ const TaskForm = ({addTask}) => {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [taskCounter, setCounter] = useState(1);
-  const [status, setStatus] = useState('Incomplete'); // State for status dropdown
+  const [taskStatus, setStatus] = useState('Incomplete'); // State for status dropdown
   const [priority, setPriority] = useState('Low'); // State for priority dropdown
 
 
@@ -16,7 +16,7 @@ const TaskForm = ({addTask}) => {
         taskNo: taskCounter,
         title,
         description,
-        status,
+        taskStatus,
         priority
         
     };
@@ -43,9 +43,8 @@ const TaskForm = ({addTask}) => {
         value={description}
         onChange={(e) => setDescription(e.target.value)}
       />
-
       {/* Status Dropdown */}
-      <select value={status} onChange={(e) => setStatus(e.target.value)}>
+      <select value={taskStatus} onChange={(e) => setStatus(e.target.value)}>
           <option value="Complete">Complete</option>
           <option value="Pending">Pending</option>
           <option value="Incomplete">Incomplete</option>
@@ -56,7 +55,6 @@ const TaskForm = ({addTask}) => {
           <option value="Medium">Medium</option>
           <option value="Low">Low</option>
         </select>
-
       <button type="submit" onClick={handleSubmit}>Add Task</button>
     </form>
     </div>
