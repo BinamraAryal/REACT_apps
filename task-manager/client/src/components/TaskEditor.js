@@ -69,6 +69,7 @@ const TaskEditor = ({ taskToEdit, updateTask, onRemoveTask }) => {
               onChange={handleInputChange}
             >
               <option value="Incomplete">Incomplete</option>
+              <option value="Pending">Pending</option>
               <option value="Complete">Complete</option>
             </select>
           </label>

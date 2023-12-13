@@ -22,7 +22,8 @@ const TaskList = ({ tasks, onTaskClick }) => {
           {tasks.map((task, index) => (
             <tr key={index}>
               <td>{task.taskNo}</td>
-              <td onClick={()=>handleTaskClick(task)}style={{cursor: 'pointer', color:'blue'}}>{task.title}</td>
+              <td onClick={()=>handleTaskClick(task)}style={{cursor: 'pointer', color:'blue'}}>{task.title}
+              </td>
               <td>{task.description}</td>
               <td>{task.taskStatus}</td>
               <td>{task.priority}</td>

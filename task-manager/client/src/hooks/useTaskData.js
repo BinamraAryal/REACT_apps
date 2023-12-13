@@ -6,12 +6,12 @@ const useTaskData = () =>{
 
     //Function to add a task to the list
     const addTask = (newTask)=>{
-        if (newTask.length===0){
-            console.log('Task is empty');
-        }
-        else{
+      if(newTask.title === ''){
+        console.log('Add task is clicked without adding any task title');
+      }else{
         setTasks([...tasks, newTask]);
-        }
+      }
+        
     };
 
     // Function to update a task
@@ -34,6 +34,7 @@ const useTaskData = () =>{
     setTasks(prevTasks => prevTasks.filter(task => task.taskNo !== taskNoToRemove));
     setSelectedTask(null); // Clear the selected task after removal
   };
+  
   return{tasks, selectedTask, addTask, updateTask, handleTaskClick, removeTask}
 };
 export default useTaskData;
