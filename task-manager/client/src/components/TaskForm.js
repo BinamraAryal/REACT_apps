@@ -7,6 +7,8 @@ const TaskForm = ({addTask}) => {
   const [taskCounter, setCounter] = useState(1);
   const [taskStatus, setStatus] = useState('Incomplete'); // State for status dropdown
   const [priority, setPriority] = useState('Low'); // State for priority dropdown
+  const [date, setDate]=useState(()=>{const currentDate = new Date();
+                                      return currentDate.toLocaleString()});
 
 
   const handleSubmit=(e)=>{
@@ -17,7 +19,8 @@ const TaskForm = ({addTask}) => {
         title,
         description,
         taskStatus,
-        priority
+        priority,
+        date
         
     };
 
@@ -25,6 +28,8 @@ const TaskForm = ({addTask}) => {
     setTitle('');
     setDescription('');
     setCounter(taskCounter+1);
+    setDate(()=>{const currentDate = new Date();
+      return currentDate.toLocaleString()});
   };
 
   return (

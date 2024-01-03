@@ -1,10 +1,7 @@
-import React from 'react';
+import  {useState} from 'react';
 import './styles/task-list.css';
 
-const TaskList = ({ tasks, onTaskClick }) => {
-    const handleTaskClick = (task)=>{
-        onTaskClick(task);
-    }
+const TaskList = ({  tasks, handleTaskClick }) => {
   return (
     <div className="task-list-container">
       <h1>Task List</h1>
@@ -16,6 +13,8 @@ const TaskList = ({ tasks, onTaskClick }) => {
             <th>Task Description</th>
             <th>Task Status</th>
             <th>Priority</th>
+            <th>Date And Time</th>
+            
           </tr>
         </thead>
         <tbody>
@@ -27,6 +26,7 @@ const TaskList = ({ tasks, onTaskClick }) => {
               <td>{task.description}</td>
               <td>{task.taskStatus}</td>
               <td>{task.priority}</td>
+              <td>{task.date}</td>
             </tr>
           ))}
         </tbody>

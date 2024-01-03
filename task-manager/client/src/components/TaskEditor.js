@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import './styles/task-editor.css';
 
-const TaskEditor = ({ taskToEdit, updateTask, onRemoveTask }) => {
+const TaskEditor = ({ selectedTask, updateTask, onRemoveTask }) => {
     const [editedTask, setEditedTask] = useState(null);
 
     useEffect(() => {
-      if (taskToEdit) {
-          setEditedTask(taskToEdit);
+      if (selectedTask) {
+          setEditedTask(selectedTask);
       } else {
           setEditedTask({
               title: '',
@@ -15,33 +15,23 @@ const TaskEditor = ({ taskToEdit, updateTask, onRemoveTask }) => {
               priority: 'low'
           });
       }
-  }, [taskToEdit]);
+  }, [selectedTask]);
   
     const handleInputChange = (e) => {
-        const { name, value } = e.target;
-        setEditedTask({
+      const { name, value } = e.target;
+      const currentDate = new Date().toLocaleString();
+      setEditedTask({
         ...editedTask,
         [name]: value,
-        });
+        date:currentDate
+      });
     };
-
-    const handleUpdate = () => {
-        console.log("Updated Task:", editedTask);
-        updateTask(editedTask);// Send the editedTask back directly to App.js
-    };
-
-    const handleRemoveTask = ()=>{
-      if (editedTask && editedTask.taskNo) {
-        onRemoveTask(editedTask.taskNo); // Pass the taskNo to the parent component for removal
-      }
-
-      
-    };
-
+;
+   
   return (
     <div className="task-editor-container">
       <h1>Task Editor</h1>
-      {taskToEdit ? (
+      {selectedTask ? ( //if the selectedTask is not empty then the following template will be displayed
         <div className="editor-form">
           <label>
             Task Name:
@@ -85,10 +75,10 @@ const TaskEditor = ({ taskToEdit, updateTask, onRemoveTask }) => {
               <option value="high">High</option>
             </select>
           </label>
-          <button onClick={handleUpdate}>Update Task</button>
-          <button onClick={handleRemoveTask}>Remove Task</button>
+          <button onClick={()=>updateTask(editedTask)}>Update Task</button>
+          <button onClick={()=>onRemoveTask(editedTask.taskNo)}>Remove Task</button>
         </div>
-      ) : (
+      ) : ( //Else the following template will be displayed
         <p>No task selected for editing</p>
       )}
     </div>

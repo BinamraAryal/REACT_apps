@@ -1,8 +1,8 @@
 import {useState} from 'react';
 
 const useTaskData = () =>{
-    const[tasks,setTasks] = useState([]);
-    const[selectedTask, setSelectedTask] = useState(null);
+  const[tasks,setTasks] = useState([]);
+  const[selectedTask, setSelectedTask] = useState(null);
 
     //Function to add a task to the list
     const addTask = (newTask)=>{
@@ -12,6 +12,11 @@ const useTaskData = () =>{
         setTasks([...tasks, newTask]);
       }
         
+    };
+
+    // Function to handle TaskList click event
+    const handleTaskClick = (task)=>{
+        setSelectedTask(task);
     };
 
     // Function to update a task
@@ -24,16 +29,11 @@ const useTaskData = () =>{
         
       };
 
-    // Function to handle TaskList click event
-    const handleTaskClick = (task)=>{
-        setSelectedTask(task);
-    };
-
-     // Function to remove a task
-  const removeTask = (taskNoToRemove) => {
+    // Function to remove a task
+    const removeTask = (taskNoToRemove) => {
     setTasks(prevTasks => prevTasks.filter(task => task.taskNo !== taskNoToRemove));
     setSelectedTask(null); // Clear the selected task after removal
-  };
+    };
   
   return{tasks, selectedTask, addTask, updateTask, handleTaskClick, removeTask}
 };
