@@ -3,6 +3,7 @@ const router = express.Router();
 const taskController = require('../controllers/taskControllers');
 
 //Define API end points
-router.post('/tasks',taskController.createTask);
+const postRoute = router.post('/addedTasks',taskController.POST);
+const getRoute = router.get('/taskList', taskController.GET)
 
-module.exports = router;
+module.exports = [postRoute, getRoute];

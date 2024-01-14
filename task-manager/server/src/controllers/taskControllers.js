@@ -1,14 +1,15 @@
-const Task = require('.../models/taskModels');
+const Task = require('../models/taskModels');
 
-exports.createTask = async (req, res) => {
+const POST = async (req, res) => {
     try{
-        const{taskTitle, taskDescription, taskStatus, taskPriority}=req.body;
+        const{taskTitle, taskDescription, taskStatus, taskPriority,date}=req.body;
 
         const newTask = new Task ({
             taskTitle,
             taskDescription,
             taskStatus,
-            taskPriority
+            taskPriority,
+            date
         });
         const savedTask = await newTask.save();
         res.json(savedTask);
@@ -17,3 +18,13 @@ exports.createTask = async (req, res) => {
     }
 
 };
+const GET = async (req, res) => {
+    try{
+        const savedTask = await Task.find();
+        res.json(savedTask);
+    } catch (err){
+        res.status(500).json({message: err.message});
+    }
+};
+
+module.exports = {POST, GET};

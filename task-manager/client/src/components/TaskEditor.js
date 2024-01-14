@@ -4,6 +4,7 @@ import './styles/task-editor.css';
 const TaskEditor = ({ selectedTask, updateTask, onRemoveTask }) => {
     const [editedTask, setEditedTask] = useState(null);
 
+
     useEffect(() => {
       if (selectedTask) {
           setEditedTask(selectedTask);
@@ -12,7 +13,7 @@ const TaskEditor = ({ selectedTask, updateTask, onRemoveTask }) => {
               title: '',
               description: '',
               taskStatus: 'Incomplete',
-              priority: 'low'
+              priority: 'low',
           });
       }
   }, [selectedTask]);

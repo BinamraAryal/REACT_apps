@@ -5,13 +5,28 @@ const useTaskData = () =>{
   const[selectedTask, setSelectedTask] = useState(null);
 
     //Function to add a task to the list
-    const addTask = (newTask)=>{
-      if(newTask.title === ''){
+    const addTask = async (newTask) => {
+      if (newTask.title === '') {
         console.log('Add task is clicked without adding any task title');
-      }else{
-        setTasks([...tasks, newTask]);
+      } else {
+          try{
+            const response = await fetch('https://localhost:5001/api/tasks',{
+              method: 'POST',
+              headers: {'Content-Type': 'application/json'},
+              body: JSON.stringify(newTask),
+            });
+
+            if (response.ok){
+              const savedTask = await response.json();
+              setTasks([...tasks, savedTask]);
+            }else{
+              console.log("Failed to add task");
+            }
+
+          }catch(error){
+            console.log('Error saving task: ', error);
+          }
       }
-        
     };
 
     // Function to handle TaskList click event

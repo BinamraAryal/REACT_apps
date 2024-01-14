@@ -4,9 +4,10 @@ const taskSchema = new mongoose.Schema({
     taskTitle: String,
     taskDescription: String,
     taskStatus: String,
-    taskpriority: String
+    taskpriority: String,
+    date: String
 });
 
-const task = mongoose.model('Task', taskSchema);
+const Task = mongoose.model('Task', taskSchema);
 
-module.exports = task;
+module.exports = Task;
