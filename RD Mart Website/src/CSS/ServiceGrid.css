@@ -1,0 +1,87 @@
+.ServiceGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    text-align: center;
+    overflow: hidden;
+  }
+  
+  .ServiceGrid h1 {
+    border-radius:5px;
+    padding: .5em;
+    grid-column: span 2;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #eb1717;
+    color: white;
+    box-shadow:0px 5px 10px rgba(0, 0, 0, 0.3);
+    max-width: 100%;
+    text-align: center;
+  }
+  
+  
+  .Service {
+    display: grid;
+    grid-template-rows: auto auto;
+    
+  }
+  
+  .Service h2 {
+    order: 1;
+    border-radius: 5px;
+    width: 300px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #eb1717;
+    color: white;
+    box-shadow:0px 5px 10px rgba(0, 0, 0, 0.3);
+    margin-right: auto;
+    margin-left:auto;
+    text-align: center;
+  }
+  
+  .Service p {
+    order: 3;
+    font-size: 1.15em;
+    width:75%;
+    margin:0.75em auto;
+    text-shadow:0px 5px 10px rgba(0, 0, 0, 0.3) ;
+  }
+
+  .Service table{
+    order:4;
+    padding:1em;
+    width:50%;
+    margin:0 auto;
+  }
+
+  .Service td{
+    width:50%;
+    background-color: #eb1717;
+    color: white;
+    border:10px;
+    font-size: 1.25em;
+    font-weight:bold;
+  }
+
+  .Service img{
+    height:300px;
+    width:300px;
+    margin:auto;
+    border-radius: 5px;
+    order:2;
+  }
+  @media(max-width: 651px){
+    .ServiceGrid{
+      display: inline-block;
+      text-align: center;
+    }
+
+    .Service table{
+      width:100%;
+      margin:0;
+    }
+
+    .Service p{
+      margin:1em auto;
+      padding:0.5em;
+    }
+  }

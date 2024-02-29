@@ -1,0 +1,31 @@
+.Footer{
+    padding:0.5em;
+    font-size: 1.25em;
+    font-family: Arial, Helvetica, sans-serif;
+    background:#c3b8b8;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Footer span{
+    display: flex;
+    font-weight: bold;
+}
+
+.Footer img{
+    width:30px;
+    height:30px;
+    animation: bounce 2s infinite ease-in-out;
+}
+
+
+@keyframes bounce{
+    0%,
+    100% {
+      transform: translateY(10px);
+    }
+    50% {
+      transform: translateY(0px);
+    }
+}
