@@ -1,7 +1,0 @@
-
-            Fonts used: NexaRustSlab-Black 
-
-            Colors used: DC1A21,FFFFFF  
-
-            Icon url: https://thenounproject.com/term/shop/66065  
-        
